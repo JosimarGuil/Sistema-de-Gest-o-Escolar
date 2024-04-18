@@ -1,0 +1,34 @@
+#icone{
+    color: #ffc107;
+}
+#icone:hover{
+    color: #e9b108;
+}
+#form-search-top-menu{
+    color: white;
+}
+
+#liMenulateraRsquedoActive{
+ background-color: #e9b108bd;
+
+}
+
+#aLinkMenuLateralEsquerdo{
+    color: white;
+}
+
+#aLinkMenuLateralEsquerdo2:hover{
+color: #e9b108;
+}
+#btnPrimario{
+    background-color: #ecca09;
+    border-color: transparent;
+    color: #03092e;
+    font-weight: 500;
+}
+
+#btnPrimario:hover{
+    background-color: #1E192C;
+    border-color: transparent;
+    color: white;
+}
