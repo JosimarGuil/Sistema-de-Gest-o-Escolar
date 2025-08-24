@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('pagamentos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tipo_pagamento_id')->constrained('tipo_pagamentos')
+            $table->foreignId('tipo_pagamento_id')
+            ->nullable()
+            ->constrained('tipo_pagamentos')
             ->onDelete('cascade');
-
-            $table->foreignId('aluno_id')->constrained('alunos')
+            $table->foreignId('aluno_id')->nullable()->constrained('alunos')
             ->onDelete('cascade');
-            $table->foreignId('funcionario_id')->constrained('funcionarios')
+            $table->foreignId('funcionario_id')->nullable()->constrained('funcionarios')
             ->onDelete('cascade');
             $table->decimal('total');
             

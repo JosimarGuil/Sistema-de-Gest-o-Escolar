@@ -1,113 +1,244 @@
 @extends('tema.tema')
 
 @section('title','Painel Gestão Canongue')
-    
+
 
 
 @section('content')
-    
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Sistema de Gestão Canongue</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-              <li class="breadcrumb-item active">Estatística</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>{{$usuarios?? 0 }}<sup style="font-size: 20px"></sup></h3>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Sistema de Gestão Canongue</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+            <li class="breadcrumb-item active">Estatística</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
 
-                <p>Usuários</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="{{route('usuario')}}" class="small-box-footer">Saber Mais <i class="fas fa-arrow-circle-right"></i></a>
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-info">
+            <div class="inner">
+              <h3>{{$usuarios?? 0 }}<sup style="font-size: 20px"></sup></h3>
+
+              <p>Usuários</p>
             </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>{{$fucnionarios?? 0 }}<sup style="font-size: 20px"></sup></h3>
-
-                <p>Funcionários</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-              <a href="{{route('funcionario')}}" class="small-box-footer">Saber Mais<i class="fas fa-arrow-circle-right"></i></a>
+            <div class="icon">
+              <i class="ion ion-bag"></i>
             </div>
+            <a href="{{route('usuario')}}" class="small-box-footer">Saber Mais <i
+                class="fas fa-arrow-circle-right"></i></a>
           </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>{{$alunos?? 0 }}</h3>
-
-                <p>Alunos</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="{{route('alunos')}}" class="small-box-footer text-white">Saber Mais <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>{{$turmas?? 0 }}</h3>
-
-                <p>Turmas</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="{{route('config')}}" class="small-box-footer">Saber Mais <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
         </div>
-        <!-- /.row -->
-       
-        <div class="row">
-          <div style="width: 50%;
-          margin: auto">
-            <img src="b.png" alt="" style="width: 500px; height: 400px; margin-top: 60px;" >
-          </div>     
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-success">
+            <div class="inner">
+              <h3>{{$fucnionarios?? 0 }}<sup style="font-size: 20px"></sup></h3>
+
+              <p>Funcionários</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="{{route('funcionario')}}" class="small-box-footer">Saber Mais<i
+                class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>{{$alunos?? 0 }}</h3>
+
+              <p>Alunos</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-person-add"></i>
+            </div>
+            <a href="{{route('alunos')}}" class="small-box-footer text-white">Saber Mais <i
+                class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-danger">
+            <div class="inner">
+              <h3>{{$turmas?? 0 }}</h3>
+
+              <p>Turmas</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="{{route('config')}}" class="small-box-footer">Saber Mais <i
+                class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-sm-5 col-md-6">
+          <div>
+            <div class="p-4 bg-white rounded-lg shadow-lg">
+                <canvas id="myChart" style="height:40vh; width:100%; position: relative;"></canvas>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+                let myChart;
+                    
+                    function initChart() {
+                        const ctx = document.getElementById('myChart');
+                        const vendasConcluidas = {{$usuarios ?? 0 }};
+                        const vendasNaoConcluidas = {{$fucnionarios?? 0 }};
+                        const comprasAfilhadasConfirmadas = {{$alunos?? 0 }};
+                        const comprasAfilhadasPendentes = {{$turmas?? 0 }};
+
+                        const data = {
+                            labels: ['Total usuarios', 'Total funcionários',
+                             'Totla alunos','Total turmas'],
+                            datasets: [{
+                                label: 'Dados Estatísticos',
+                                data: [vendasConcluidas, vendasNaoConcluidas,comprasAfilhadasConfirmadas, comprasAfilhadasPendentes],
+                                backgroundColor: [
+                                    'rgba(243, 148, 2, 0.8)',   // Laranja
+                                    'rgba(141, 198, 63, 0.8)',  // Verde
+                                ],
+                                borderColor: [
+                                    'rgba(243, 148, 2, 1)',
+                                    'rgba(141, 198, 63, 1)',
+                                ],
+                                borderWidth: 2,
+                                borderRadius: 8,
+                                barThickness: 40,
+                            }]
+                        };
+
+                        const config = {
+                            type: 'bar',
+                            data: data,
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                animation: {
+                                    duration: 2000,
+                                    easing: 'easeInOutQuart'
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: true,
+                                        position: 'top',
+                                        labels: {
+                                            font: {
+                                                size: 14,
+                                                family: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif"
+                                            },
+                                            padding: 20
+                                        }
+                                    },
+                                    tooltip: {
+                                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                                        titleFont: {
+                                            size: 16
+                                        },
+                                        bodyFont: {
+                                            size: 14
+                                        },
+                                        padding: 12,
+                                        displayColors: false,
+                                        callbacks: {
+                                            label: function(context) {
+                                                return `${context.parsed.y} Total`;
+                                            }
+                                        }
+                                    }
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        grid: {
+                                            color: 'rgba(0, 0, 0, 0.1)',
+                                            drawBorder: false
+                                        },
+                                        ticks: {
+                                            font: {
+                                                size: 12
+                                            },
+                                            padding: 10
+                                        }
+                                    },
+                                    x: {
+                                        grid: {
+                                            display: false
+                                        },
+                                        ticks: {
+                                            font: {
+                                                size: 12
+                                            },
+                                            padding: 10
+                                        }
+                                    }
+                                }
+                            }
+                        };
+
+                        if (myChart) {
+                            myChart.destroy();
+                        }
+                        myChart = new Chart(ctx, config);
+                    }
+
+                    // Inicializar o gráfico
+                    initChart();
+
+                    // Atualizar o gráfico quando os dados mudarem
+                    $wire.on('updateChart', () => {
+                        initChart();
+                    });
+
+                    // Atualizar a cada 30 segundos
+                    setInterval(() => {
+                        $wire.$refresh();
+                    }, 20000);
+            </script>
+        </div>
+        </div>
+        <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+          <div class="p-4 bg-white rounded-lg shadow-lg">
+             <h3>Avisos!</h3>
+              <div class="alert alert-warning" role="alert">
+                  Cobrança de propinas em 05 - 09 -2025
+              </div>
+          </div>
         </div>
       </div>
-    </section>
-    <!-- /.content -->
-  </div>
+    </div>
+  </section>
+</div>
 
-
-  <script>
-    $(function () {
+<script>
+  $(function () {
       /*
        * Flot Interactive Chart
        * -----------------------
@@ -393,5 +524,5 @@
         + '<br>'
         + Math.round(series.percent) + '%</div>'
     }
-  </script>
+</script>
 @endsection

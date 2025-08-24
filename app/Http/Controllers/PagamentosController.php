@@ -134,13 +134,15 @@ class PagamentosController extends Controller
         $tipo=TipoPagamento::find($request->tipo_pagamento_id)??false; 
         $aluno=Aluno::find($request->aluno_id)?? false;
         
-        if($tipo != false and $aluno != false){
+        if($tipo != false and $aluno != false)
+        {
             $request->validate([
                 'aluno_id'=>['required'],
                 'tipo_pagamento_id'=>['required'],
              ]);
              
-           if($tipo->clace_id==$aluno->clace_id){
+           if($tipo->clace_id == $aluno->clace_id)
+           {
             if(($tipo->tipo=="Propina" or $tipo->tipo=="propina")){
             // pagamento de propinas
             if (isset($request->meses) and $request->meses!=null ) {

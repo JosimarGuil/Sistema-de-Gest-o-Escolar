@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('claces', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->foreignId('curso_id')->constrained('cursos')
+            $table->foreignId('curso_id')->nullable()->constrained('cursos')
             ->onDelete('cascade');
-            $table->foreignId('siculo_id')->constrained('siculos')
+            $table->foreignId('siculo_id')->nullable()->constrained('siculos')
             ->onDelete('cascade');
         });
     }

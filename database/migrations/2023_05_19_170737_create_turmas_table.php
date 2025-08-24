@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('periodo');
-            $table->foreignId('sala_id')->constrained('salas')
+            $table->foreignId('sala_id')->nullable()->constrained('salas')
             ->onDelete('cascade');
-            $table->foreignId('clace_id')->constrained('claces')
+            $table->foreignId('clace_id')->nullable()->constrained('claces')
             ->onDelete('cascade');
         });
     }

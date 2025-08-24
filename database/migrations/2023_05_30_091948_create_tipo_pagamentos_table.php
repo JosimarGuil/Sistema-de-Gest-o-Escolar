@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('tipo_pagamentos', function (Blueprint $table) {
             $table->id();
-          
             $table->decimal('preco');
             $table->foreignId('clace_id')->constrained('claces')
             ->onDelete('cascade');
