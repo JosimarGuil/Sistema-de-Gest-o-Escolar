@@ -79,7 +79,7 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-3 col-6 ">
           <!-- small box -->
           <div class="small-box bg-danger">
             <div class="inner">
@@ -97,16 +97,16 @@
         <!-- ./col -->
       </div>
     </div>
-    <div class="container text-center">
+    <div class=" text-center px-2">
       <div class="row">
-        <div class="col-sm-5 col-md-6">
+        <div class="col-sm-5 col-md-6 ">
           <div>
             <div class="p-4 bg-white rounded-lg shadow-lg">
-                <canvas id="myChart" style="height:40vh; width:100%; position: relative;"></canvas>
+              <canvas id="myChart" style="height:40vh; width:100%; position: relative;"></canvas>
             </div>
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             <script>
-                let myChart;
+              let myChart;
                     
                     function initChart() {
                         const ctx = document.getElementById('myChart');
@@ -122,12 +122,17 @@
                                 label: 'Dados Estatísticos',
                                 data: [vendasConcluidas, vendasNaoConcluidas,comprasAfilhadasConfirmadas, comprasAfilhadasPendentes],
                                 backgroundColor: [
-                                    'rgba(243, 148, 2, 0.8)',   // Laranja
-                                    'rgba(141, 198, 63, 0.8)',  // Verde
+                                    '#17A2B8',   // Laranja
+                                    '#28A745',  // Verde
+                                    '#FFC107',
+                                    '#DC3545'   // Vermelho
                                 ],
                                 borderColor: [
-                                    'rgba(243, 148, 2, 1)',
-                                    'rgba(141, 198, 63, 1)',
+                                    '#17A2B8',
+                                    '#28A745',
+                                    '#FFC107',
+                                    '#DC3545'   // Vermelho
+
                                 ],
                                 borderWidth: 2,
                                 borderRadius: 8,
@@ -222,14 +227,14 @@
                         $wire.$refresh();
                     }, 20000);
             </script>
-        </div>
+          </div>
         </div>
         <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
           <div class="p-4 bg-white rounded-lg shadow-lg">
-             <h3>Avisos!</h3>
-              <div class="alert alert-warning" role="alert">
-                  Cobrança de propinas em 05 - 09 -2025
-              </div>
+            <h3>Avisos!</h3>
+            <div class="alert alert-warning" role="alert">
+              Cobrança de propinas em 05 - 09 -2025
+            </div>
           </div>
         </div>
       </div>

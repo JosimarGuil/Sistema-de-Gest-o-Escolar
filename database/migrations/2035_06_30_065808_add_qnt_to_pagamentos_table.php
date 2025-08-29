@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::table('pagamentos', function (Blueprint $table) {
             $table->integer('qnt')->nullable();
+            $table->integer('price')->nullable();
+
         });
     }
 
@@ -21,8 +23,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('pagamentos', function (Blueprint $table) {
+        Schema::table('pagamentos', function (Blueprint $table) 
+        {
             $table->dropColumn('qnt')->nullable();
+            $table->dropColumn('price')->nullable();
         });
     }
 };

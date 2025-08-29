@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+     {!! ToastMagic::styles() !!}
 </head>
 <body class="hold-transition login-page">
   @if (session('sms'))
@@ -24,9 +25,6 @@
     </div>   
   </div>
     @endif
-
-   
-      
  
 <div class="login-box">
   <!-- /.login-logo -->
@@ -75,8 +73,6 @@
         </div>
       </form>
       <!-- /.social-auth-links -->
-
-      
     </div>
     <!-- /.card-body -->
   </div>
@@ -90,5 +86,6 @@
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
+{!! ToastMagic::scripts() !!}
 </body>
 </html>

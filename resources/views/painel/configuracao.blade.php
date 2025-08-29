@@ -11,7 +11,6 @@
                     <div class="col-sm-6">
                         <h1>
                             Configurações gerais
-
                         </h1>
                     </div>
                     <div class="col-sm-6">
@@ -88,10 +87,8 @@
                 @endif
             </div><!-- /.container-fluid -->
         </section>
-
         <section class="content">
             <div class="container-fluid">
-
                 <div class="card card-warning card-outline">
                     <div class="card-header">
                         <h3 class="card-title">
@@ -101,7 +98,7 @@
                     </div>
                     <div class="card-body  justify-content-around">
                         @if (count($siculos) < 2)
-                            <button type="button" class="btn btn-success toastrDefaultSuccess " data-toggle="modal"
+                            <button type="button" class="btn btn-success toastrDefaultSuccess text-white" data-toggle="modal"
                                 data-target="#modal-defaultciclus1">
                                 Adicionar Cíclo
                             </button>
@@ -111,7 +108,7 @@
                             Adicionar cursos
                         </button>
 
-                        <button type="button" class="btn btn-warning  toastrDefaultInfo" data-toggle="modal"
+                        <button type="button" class="btn btn-warning  toastrDefaultInfo text-white" data-toggle="modal"
                             data-target="#modal-defaultclasses5">
                             Adicionar Classe
                         </button>
@@ -134,22 +131,16 @@
                 </div>
             </div>
             <!-- /.col -->
-
-
-
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">
                             Ajustar Configurações da escola</h3><br>
                         <hr>
-
-
                         <button id="bci" type="button" class="btn btn-default toastrDefaultError"
                             onclick=" siculos(this)" style="color: white;background-color:#007bff ">
                             Ver todos Cíclos
                         </button>
-
 
                         <button id="bcu" type="button" class="btn btn-default toastrDefaultError"
                             onclick=" cursos(this)">
@@ -164,15 +155,15 @@
                             Ver todas Salas
                         </button>
                         <button id="bturmas" type="button" class="btn btn-default toastrDefaultError"
-                            onclick="turmas(this) ">
-                            Ver todos Turmas
+                            onclick="turmas(this)">
+                            Ver todas Turmas
                         </button>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <!--TABELA DOS SICULOS-->
                         <div id="siculo" style="display: block">
-                            <table class="table table-bordered table-hover">
+                            <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>Código</th>
@@ -192,23 +183,27 @@
                                             <th>----</th>
                                             <th>----</th>
                                             <td>
-                                                {{-- <button class="btn btn-success" data-toggle="modal"
-                                                    data-target="#modal-defaulteditciclu{{ $siculo->id }}"><i
-                                                        class="fas fa-edit"></i></button> --}}
                                                 <button class="btn btn-warning" data-toggle="modal"
                                                     data-target="#modal-defaulteditciclu1{{ $siculo->id }}"
                                                     style="display: inline-block"><i class="fas fa-trash"
-                                                        title="Mover para Lixeira"></i></button>
+                                                    title="Mover para Lixeira"></i>
+                                                </button>
                                             </td>
                                         </tr>
                                         <div class="modal fade" id="modal-defaulteditciclu1{{ $siculo->id }}">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h4 class="modal-title text-warning"> <b>AVISO!</b> </h4>
+                                                        <h4 class=" text-warning text-md"> <b>AVISO!</b> </h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <p class="text-default">Tem certeza que deseja mover este cíclo
+                                                        <span style="background-color:#ccc; margin:auto;
+                                                        display :block; width:50px; height:50px; text-align:center;
+                                                        display:flex; align-items:center; justify-content:center;
+                                                        border-radius: 50%; font-size:25px;" class="text-danger">
+                                                           <i class="fas fa-trash " title="Mover para Lixeira"></i>
+                                                        </span>
+                                                        <p class="text-default text-center mt-2">Tem certeza que deseja mover este cíclo
                                                             para a lixeira? </p>
                                                         <form action="{{ route('deleteSiculo', $siculo->id) }}"
                                                             method="post">
@@ -216,22 +211,18 @@
                                                             @method('DELETE')
                                                             <div class="card-footer">
                                                                 <button type="submit"
-                                                                    class="btn btn-warning
-                                                            text-white">Sim</button>
+                                                                    class="btn btn-success
+                                                            text-white px-4">Sim
+                                                            </button>
                                                         </form>
                                                         <button type="button"
                                                             class="btn btn-danger
-                                                            text-white"
+                                                            text-white px-4"
                                                             data-dismiss="modal">Não</button>
                                                     </div>
                                                 </div>
-                                                <div class="modal-footer justify-content-between">
-                                                    <h4 class="modal-title text-warning"> <b>AVISO!</b> </h4>
-                                                </div>
                                             </div>
-                                            <!-- /.modal-content -->
                                         </div>
-                                        <!-- /.modal-dialog -->
                         </div>
                         {{-- <div class="modal fade" id="modal-defaulteditciclu{{ $siculo->id }}">
                                             <div class="modal-dialog">
@@ -301,7 +292,7 @@
                     </div>
                     <!--TABELA DAS TURMAS-->
                     <div id="turmas" style="display: none">
-                        <table class="table table-bordered table-hover">
+                        <table id="example2" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <td>Código</td>
@@ -336,12 +327,16 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h4 class="modal-title text-warning"> <b>AVISO!</b> </h4>
-
-
+                                                    <h4 class="modal-title text-md"> <b>AVISO!</b> </h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p class="text-default">Tem certeza que deseja mover esta turma para a
+                                                  <span style="background-color:#ccc; margin:auto;
+                                                        display :block; width:50px; height:50px; text-align:center;
+                                                        display:flex; align-items:center; justify-content:center;
+                                                        border-radius: 50%; font-size:25px;" class="text-danger">
+                                                           <i class="fas fa-trash " title="Mover para Lixeira"></i>
+                                                        </span>
+                                                    <p class="text-default text-center mt-2">Tem certeza que deseja mover esta turma para a
                                                         lixeira? </p>
                                                     <form action="{{ route('deleteTurma', $turma->id) }}" method="post">
                                                         @csrf
@@ -349,21 +344,16 @@
                                                         <div class="card-footer">
                                                             <button type="submit"
                                                                 class="btn btn-warning
-                                                            text-white">Sim</button>
+                                                            text-white px-4">Sim</button>
                                                     </form>
                                                     <button type="button"
                                                         class="btn btn-danger
-                                                            text-white"
+                                                            text-white px-4"
                                                         data-dismiss="modal">Não</button>
                                                 </div>
                                             </div>
-                                            <div class="modal-footer justify-content-between">
-                                                <h4 class="modal-title text-warning"> <b>AVISO!</b> </h4>
-                                            </div>
                                         </div>
-                                        <!-- /.modal-content -->
                                     </div>
-                                    <!-- /.modal-dialog -->
                     </div>
                     <div class="modal fade" id="modal-defaulteditturma{{ $turma->id }}">
                         <div class="modal-dialog">
@@ -484,7 +474,7 @@
 
                 <!--TABELA DAS SALAS-->
                 <div id="salas" style="display: none">
-                    <table class="table table-bordered table-hover">
+                    <table id="example3" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th>Codigo</th>
@@ -512,39 +502,36 @@
                                             data-target="#modal-defaulteditsala1{{ $sala->id }}"
                                             style="display: inline-block" title="Mover para Lixeira"><i
                                                 class="fas fa-trash"></i></button>
-
                                     </td>
-
                                 </tr>
-
                                 <div class="modal fade" id="modal-defaulteditsala1{{ $sala->id }}">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title text-warning"> <b>AVISO!</b> </h4>
-
-
+                                                <h4 class="text-md text-warning"> <b>AVISO!</b> </h4>
                                             </div>
                                             <div class="modal-body">
-                                                <p class="text-default">Tem certeza que deseja mover esta sala para a
+                                                    <span style="background-color:#ccc; margin:auto;
+                                                        display :block; width:50px; height:50px; text-align:center;
+                                                        display:flex; align-items:center; justify-content:center;
+                                                        border-radius: 50%; font-size:25px;" class="text-danger">
+                                                           <i class="fas fa-trash " title="Mover para Lixeira"></i>
+                                                    </span>
+                                                <p class="text-default text-center mt-2">Tem certeza que deseja mover esta sala para a
                                                     lixeira? </p>
                                                 <form action="{{ route('deleteSala', $sala->id) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
                                                     <div class="card-footer">
                                                         <button type="submit"
-                                                            class="btn btn-warning
+                                                            class="btn btn-warning px-4
                                                             text-white">Sim</button>
                                                 </form>
                                                 <button type="button"
                                                     class="btn btn-danger
-                                                            text-white"
+                                                            text-white px-4"
                                                     data-dismiss="modal">Não</button>
                                             </div>
-
-                                        </div>
-                                        <div class="modal-footer justify-content-between">
-                                            <h4 class="modal-title text-warning"> <b>AVISO!</b> </h4>
                                         </div>
                                     </div>
                                     <!-- /.modal-content -->
@@ -584,7 +571,6 @@
                             </div>
                             <div class="modal-footer justify-content-between">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-
                             </div>
                         </div>
                         <!-- /.modal-content -->
@@ -610,7 +596,7 @@
 
             <!--TABELA DOS CURSOS-->
             <div id="curso" style="display: none">
-                <table class="table table-bordered table-hover">
+                <table id="example4" class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th>Código</th>
@@ -646,30 +632,29 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title text-warning"> <b>AVISO!</b> </h4>
+                                                <h4 class="text-md text-warning"> <b>AVISO!</b> </h4>
                                             </div>
                                             <div class="modal-body">
-                                                <p class="text-default">Tem certeza que deseja mover este curso para
-                                                    lixeira? </p>
+                                            <span style="background-color:#ccc; margin:auto;
+                                                display :block; width:50px; height:50px; text-align:center;
+                                                display:flex; align-items:center; justify-content:center;
+                                                border-radius: 50%; font-size:25px;" class="text-danger">
+                                                    <i class="fas fa-trash " title="Mover para Lixeira"></i>
+                                            </span>
+                                                <p class="text-default text-center mt-2">Tem certeza que deseja mover este curso para lixeira?</p>
                                                 <form action="{{ route('deleteCurso', $curso->id) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
-
                                             </div>
-
                                             <div class="card-footer">
                                                 <button type="submit"
                                                     class="btn btn-warning
-                                                        text-white">Sim</button>
+                                                        text-white px-4">Sim</button>
                                                 </form>
                                                 <button type="button"
                                                     class="btn btn-danger
-                                                        text-white"
+                                                        text-white px-4"
                                                     data-dismiss="modal">Não</button>
-                                            </div>
-
-                                            <div class="modal-footer justify-content-between">
-                                                <h4 class="modal-title text-warning"> <b>AVISO!</b> </h4>
                                             </div>
                                         </div>
                                         <!-- /.modal-content -->
@@ -751,7 +736,7 @@
 
             <!--TABELA DAS CLASSES-->
             <div id="classes" style="display: none">
-                <table class="table table-bordered table-hover">
+                <table id="example6" class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th colspan="2">Associação da Classe</th>
@@ -790,10 +775,16 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title text-warning"> <b>AVISO!</b> </h4>
+                                                <h4 class="text-md text-warning mt-2"> <b>AVISO!</b> </h4>
                                             </div>
                                             <div class="modal-body">
-                                                <p class="text-default">Tem certeza que deseja mover este cíclo para a
+                                            <span style="background-color:#ccc; margin:auto;
+                                                        display :block; width:50px; height:50px; text-align:center;
+                                                        display:flex; align-items:center; justify-content:center;
+                                                        border-radius: 50%; font-size:25px;" class="text-danger">
+                                                           <i class="fas fa-trash " title="Mover para Lixeira"></i>
+                                                        </span>
+                                                <p class="text-default text-center mt-2">Tem certeza que deseja mover este cíclo para a
                                                     lixeira?</p>
                                                 <form action="{{ route('deleteClasse', $classe->id) }}" method="post">
                                                     @csrf
@@ -801,24 +792,17 @@
                                                     <div class="card-footer">
                                                         <button type="submit"
                                                             class="btn btn-warning
-                                                                text-white">Sim</button>
+                                                                text-white px-4">Sim</button>
                                                 </form>
                                                 <button type="button"
                                                     class="btn btn-danger
-                                                                text-white"
+                                                                text-white px-4"
                                                     data-dismiss="modal">Não</button>
                                             </div>
                                         </div>
-                                        <div class="modal-footer justify-content-between">
-                                            <h4 class="modal-title text-warning"> <b>AVISO!</b> </h4>
-                                        </div>
                                     </div>
-                                    <!-- /.modal-content -->
                                 </div>
-                                <!-- /.modal-dialog -->
             </div>
-
-
             <div class="modal fade" id="modal-defaulteditclasse2{{ $classe->id }}">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -978,21 +962,15 @@
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">Adicionar</button>
                         </div>
-
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
                     </form>
                 </div>
             </div>
-            <!-- /.modal-content -->
         </div>
-        <!-- /.modal-dialog -->
     </div>
-
-
     <!--MODAL DAS CLASS-->
-
     <div class="modal fade" id="modal-defaultclasses5">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -1060,27 +1038,18 @@
                                 @enderror
                             </div>
                         </div>
-                        <!-- /.card-body -->
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">Adicionar</button>
                         </div>
-
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-
                     </form>
                 </div>
             </div>
-            <!-- /.modal-content -->
         </div>
-        <!-- /.modal-dialog -->
     </div>
-
-
-
     <!--MODAL DOS CURSOS-->
-
     <div class="modal fade" id="modal-defaultcursos2">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -1260,11 +1229,6 @@
         </div>
         <!-- /.modal-dialog -->
     </div>
-
-
-
-
-
     <!-- ./row -->
     </div><!-- /.container-fluid -->
 

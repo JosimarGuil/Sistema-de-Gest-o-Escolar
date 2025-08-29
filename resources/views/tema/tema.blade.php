@@ -32,6 +32,8 @@
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  
+    {!! ToastMagic::styles() !!}
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -56,7 +58,7 @@
       <ul class="navbar-nav ml-auto">
       </ul>
     </nav>
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <aside class="main-sidebar sidebar-dark-primary   elevation-4">
       <!-- Brand Logo -->
       <a href="/painel" class="brand-link">
         <img src="kanongue.png" alt="AdminLTE Logo" style="
@@ -64,7 +66,6 @@
       height: 80px;">
         <span class="brand-text font-weight-light">Canongue</span>
       </a>
-
       <!-- Sidebar -->
       <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
@@ -88,7 +89,8 @@
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <ul class="nav nav-pills nav-sidebar flex-column" 
+          data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
@@ -268,25 +270,7 @@
   <!-- Bootstrap 4 -->
 
   <!-- Select2 -->
-  <script src="../../plugins/select2/js/select2.full.min.js"></script>
-  <!-- Bootstrap4 Duallistbox -->
-  <script src="../../plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
-  <!-- InputMask -->
-  <script src="../../plugins/moment/moment.min.js"></script>
-  <script src="../../plugins/inputmask/jquery.inputmask.min.js"></script>
-  <!-- date-range-picker -->
-  <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
-  <!-- bootstrap color picker -->
-  <script src="../../plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-  <!-- Tempusdominus Bootstrap 4 -->
-  <script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-  <!-- BS-Stepper -->
-  <script src="../../plugins/bs-stepper/js/bs-stepper.min.js"></script>
-  <!-- dropzonejs -->
-  <script src="../../plugins/dropzone/min/dropzone.min.js"></script>
-  <!-- AdminLTE App -->
-  <!-- AdminLTE for demo purposes -->
-  <script src="../../dist/js/demo.js"></script>
+
 
   <!-- AdminLTE for demo purposes 
 <script src="../../dist/js/demo.js"></script>  
@@ -406,8 +390,6 @@ function cursos(e){
     document.getElementById('listalunos').style.display="block";
   }
 
-
-
   function verTposPagamentos(e){
       document.getElementById('tipo').style.display='block';
       document.getElementById('entradas').style.display='none';
@@ -420,6 +402,7 @@ function cursos(e){
     document.getElementById('bnentrada').style.color='#343a40';
     document.getElementById('bsaida').style.background="none"
     document.getElementById('bsaida').style.color='#343a40';
+
   }
 
   function verEntradas(e){
@@ -436,7 +419,8 @@ function cursos(e){
     document.getElementById('bsaida').style.color='#343a40';
   }
 
-  function verSaidas(e){
+  function verSaidas(e)
+  {
       document.getElementById('tipo').style.display='none';
       document.getElementById('entradas').style.display='none';
       document.getElementById('saidas').style.display='block';
@@ -444,25 +428,59 @@ function cursos(e){
       e.style.background="#007bff";
       e.style.color="#fff";
      
-      document.getElementById('bnentrada').style.background="none"
+    document.getElementById('bnentrada').style.background="none"
     document.getElementById('bnentrada').style.color='#343a40';
     document.getElementById('btipo').style.background="none"
     document.getElementById('btipo').style.color='#343a40';
+  
   }
-  $(function () {
+
+  $(function () 
+  {
+    $("#example6").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example6_wrapper .col-md-6:eq(0)');
+$("#example2").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+
+    $("#example3").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example3_wrapper .col-md-6:eq(0)');
+
+ $("#example4").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example4_wrapper .col-md-6:eq(0)');
+
+ $("#example5").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example5_wrapper .col-md-6:eq(0)');
+   
     $("#example1").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
+
+   $("#example9").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example9_wrapper .col-md-6:eq(0)');
+
+    $("#example10").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example10_wrapper .col-md-6:eq(0)');
+
+  
+    $("#example11").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example11_wrapper .col-md-6:eq(0)');
   });
 
 $(function () {
@@ -594,6 +612,25 @@ $(function () {
 
   </script>
 
+    <script src="../../plugins/select2/js/select2.full.min.js"></script>
+  <!-- Bootstrap4 Duallistbox -->
+  <script src="../../plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+  <!-- InputMask -->
+  <script src="../../plugins/moment/moment.min.js"></script>
+  <script src="../../plugins/inputmask/jquery.inputmask.min.js"></script>
+  <!-- date-range-picker -->
+  <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- bootstrap color picker -->
+  <script src="../../plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+  <!-- Tempusdominus Bootstrap 4 -->
+  <script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+  <!-- BS-Stepper -->
+  <script src="../../plugins/bs-stepper/js/bs-stepper.min.js"></script>
+  <!-- dropzonejs -->
+  <script src="../../plugins/dropzone/min/dropzone.min.js"></script>
+  <!-- AdminLTE App -->
+  <!-- AdminLTE for demo purposes -->
+  <script src="../../dist/js/demo.js"></script>
+{!! ToastMagic::scripts() !!}
 </body>
-
 </html>
